@@ -26,6 +26,9 @@ import {
     StyledInputFieldCEP
 } from '../../styles/Conta/CadastroStyled'
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { cadastro } from '../../Redux/Cadastro/slice';
+import { AppDispatch } from '../../Redux/store';
 
 interface DataForm {
     profissional: string;
@@ -46,9 +49,10 @@ interface DataForm {
 export default function ModalInserir() {
 
     const { register, handleSubmit, reset } = useForm<DataForm>()
+    const dispatch = useDispatch<AppDispatch>();
 
     const onSubmit: SubmitHandler<DataForm> = (data) => {
-        console.log(data);
+        dispatch(cadastro(data));
         reset();
     }
 
