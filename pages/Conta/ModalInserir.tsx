@@ -20,7 +20,7 @@ import {
     StyledSelect,
     StyledContainerSelectInput,
     StyledInput,
-    StyledContainerDado,
+    StyledContainerTwoFields,
     StyledInputNome
 } from '../../styles/Conta/CadastroStyled'
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -83,7 +83,7 @@ export default function ModalInserir() {
                             <option value="opcao3">José De Oliveira</option>
                         </StyledSelect>
                         <StyledContainerSelectInput>
-                            <StyledContainerDado>
+                            <StyledContainerTwoFields>
                                 <StyledTitleSelectInput>Banco: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelect {...register("banco")}>
                                     <option value="opcao">Selecione</option>
@@ -91,26 +91,26 @@ export default function ModalInserir() {
                                     <option value="opcao2">Banco do Brasil</option>
                                     <option value="opcao3">Itaú</option>
                                 </StyledSelect>
-                            </StyledContainerDado>
-                            <StyledContainerDado>
+                            </StyledContainerTwoFields>
+                            <StyledContainerTwoFields>
                                 <StyledTitleSelectInput>Tipo de Conta: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelect {...register("tipoConta")}>
                                     <option value="opcao">Selecione</option>
                                     <option value="opcao1">Conta Corrente</option>
                                     <option value="opcao2">Poupança</option>
                                 </StyledSelect>
-                            </StyledContainerDado>
+                            </StyledContainerTwoFields>
                         </StyledContainerSelectInput>
 
                         <StyledContainerSelectInput>
-                            <StyledContainerDado>
+                            <StyledContainerTwoFields>
                                 <StyledTitleSelectInput>Agência: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledInput placeholder="Digite aqui" {...register("agencia")}></StyledInput>
-                            </StyledContainerDado>
-                            <StyledContainerDado>
+                            </StyledContainerTwoFields>
+                            <StyledContainerTwoFields>
                                 <StyledTitleSelectInput>Conta com dígito: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledInput placeholder="Digite aqui" {...register("conta")}></StyledInput>
-                            </StyledContainerDado>
+                            </StyledContainerTwoFields>
                         </StyledContainerSelectInput>
 
                         <StyledContainerSelectInput>
@@ -155,14 +155,14 @@ export default function ModalInserir() {
                         </StyledContainerSelectInput>
 
                         <StyledContainerSelectInput>
-                            <StyledContainerDado>
+                            <StyledContainerTwoFields>
                                 <StyledTitleSelectInput>Endereço: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledInput placeholder="Digite aqui" {...register("endereco")}></StyledInput>
-                            </StyledContainerDado>
-                            <StyledContainerDado>
+                            </StyledContainerTwoFields>
+                            <StyledContainerTwoFields>
                                 <StyledTitleSelectInput>Número: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledInput placeholder="Digite aqui" {...register("numero")}></StyledInput>
-                            </StyledContainerDado>
+                            </StyledContainerTwoFields>
                         </StyledContainerSelectInput>
 
                     </StyledContainerForm>
