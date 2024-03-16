@@ -35,7 +35,6 @@ import { AppDispatch, useAppSelector } from '../../Redux/store';
 import { z } from 'zod';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ModalCanaisMensagem from './ModalCanaisMensagem';
 
 interface DataForm {
     idProfissional: string;

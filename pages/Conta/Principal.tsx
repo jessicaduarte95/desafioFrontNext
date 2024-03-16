@@ -6,6 +6,7 @@ import ModalInserir from '../../pages/Conta/ModalInserir';
 import { useAppSelector, AppDispatch } from '../../Redux/store';
 import { useDispatch } from 'react-redux';
 import { steps } from '../../Redux/Cadastro/sliceCanaisMensagem';
+import ModalCanaisMensagem from './ModalCanaisMensagem';
 export default function Principal() {
 
     const openModal =  useAppSelector((state) => state.stepsCadastro);
@@ -21,6 +22,9 @@ export default function Principal() {
             {
                 openModal.step == "cadastro" ?
                 <ModalInserir/>
+                : 
+                openModal.step == "canaisMensagem" ?
+                <ModalCanaisMensagem/>
                 : ''
             }
         </StyledContainerPrincipal>
