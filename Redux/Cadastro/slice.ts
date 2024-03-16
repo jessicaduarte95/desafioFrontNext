@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface Data {
-    profissional: string;
-    banco: string;
-    tipoConta: string;
+    idProfissional: string;
+    idBanco: string;
+    idTipoConta: string;
     agencia: number;
     conta: number;
-    tipoPessoa: string;
+    idTipoPessoa: string;
     CPF: number;
     telefone: number;
     nome: string;
     CEP: number;
-    estado: string;
+    idEstado: string;
     cidade: string;
     endereco: string;
     numero: string;
