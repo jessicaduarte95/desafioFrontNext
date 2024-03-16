@@ -11,6 +11,7 @@ export const StyleCancelButton = styled.button`
     font-size: 16px;
     color: #7D8C94;
     padding: 4px 32px 4px 32px;
+    line-height: 24px;
     border: 1px solid #7D8C94;
     border-radius: 4px;
     background-color: #FFFFFF;
@@ -26,6 +27,7 @@ export const StyleCancelButton = styled.button`
 export const StyleNextButton = styled.button`
     font-size: 16px;
     color: #DDF2F8;
+    line-height: 24px;
     padding: 4px 32px 4px 32px;
     border: 1px solid #2797BA;
     border-radius: 4px;
@@ -35,5 +37,20 @@ export const StyleNextButton = styled.button`
     &:hover {
         border: 1px solid #207C97;
         background-color: #207C97;
+    }
+`
+
+export const StyledButtonInsert = styled.button`
+    background-color: #FFFFFF;
+    color: #2797BA;
+    font-size: 16px;
+    font-family: Roboto;
+    border: 1px solid #2797BA;
+    border-radius: 4px;
+    padding: 4px 32px 4px 32px;
+    cursor: pointer; 
+    transition: background-color 0.7s;
+    &:hover {
+        background-color: #DDF2F8;
     }
 `

@@ -13,7 +13,7 @@ export const StyledModalOverlay = styled.div`
 `
 
 export const StyledContainerModal = styled.div`
-    max-width: 90%;
+    width: 900px;
     max-height: 85vh;
     background-color: white;
     border-radius: 5px;
