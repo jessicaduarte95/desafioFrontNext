@@ -1,9 +1,17 @@
 import {
     StyledModalOverlay,
-
     StyledContainerModal,
     StyledModalTitle,
     StyledModalSubTitle,
+    StyledSpan
+} from '../../styles/Conta/ModalStyled';
+
+import {
+    StyleContainerButton,
+    StyleCancelButton,
+    StyleNextButton
+} from '../../styles/Conta/ButtonStyled';
+import {
     StyledContainerAlert,
     StyledAlertTitle,
     StyledAlertText,
@@ -12,13 +20,9 @@ import {
     StyledSelect,
     StyledContainerSelectInput,
     StyledInput,
-    StyledSpan,
     StyledContainerDado,
-    StyleContainerButton,
-    StyleCancelButton,
-    StyleNextButton,
     StyledInputNome
-} from '../../styles/Conta/ModalStyled'
+} from '../../styles/Conta/CadastroStyled'
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 interface DataForm {
