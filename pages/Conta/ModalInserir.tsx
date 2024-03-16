@@ -16,7 +16,8 @@ import {
     StyledContainerDado,
     StyleContainerButton,
     StyleCancelButton,
-    StyleNextButton
+    StyleNextButton,
+    StyledInputNome
 } from '../../styles/Conta/ModalStyled'
 import { useForm, SubmitHandler } from 'react-hook-form';
 
@@ -128,7 +129,7 @@ export default function ModalInserir() {
                         </StyledContainerSelectInput>
 
                         <StyledTitleSelectInput>Nome completo: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                        <StyledInput placeholder="Digite aqui" {...register("nome")}></StyledInput>
+                        <StyledInputNome placeholder="Digite aqui" {...register("nome")}></StyledInputNome>
 
                         <StyledContainerSelectInput>
                             <div>

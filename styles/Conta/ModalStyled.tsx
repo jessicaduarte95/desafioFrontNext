@@ -83,6 +83,17 @@ export const StyledInput = styled.input`
     padding: 4px 16px 4px 16px;
     border: 1px solid #CCD1D3;
     border-radius: 2px;
+    margin-right: 32px;
+    width: 93%;
+`
+
+export const StyledInputNome = styled.input`
+    font-size: 16px;
+    padding: 4px 16px 4px 16px;
+    border: 1px solid #CCD1D3;
+    border-radius: 2px;
+    margin-right: 32px;
+    width: 98%;
 `
 
 export const StyledSpan = styled.span`
