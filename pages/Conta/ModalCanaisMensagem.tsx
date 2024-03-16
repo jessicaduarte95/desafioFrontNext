@@ -27,6 +27,9 @@ import {
     StyledButtonInsert
 } from '../../styles/Conta/ButtonStyled';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { AppDispatch } from '../../Redux/store';
+import { useDispatch } from 'react-redux';
+import { steps } from '../../Redux/Cadastro/sliceCanaisMensagem';
 
 
 interface DataForm {
@@ -35,6 +38,12 @@ interface DataForm {
 export default function ModalCanaisMensagem() {
 
     const { register, handleSubmit, reset } = useForm<DataForm>()
+
+    const dispatch = useDispatch<AppDispatch>();
+
+    const handleCloseModal = () => {
+        dispatch(steps(""));
+    }
 
     const onSubmit: SubmitHandler<DataForm> = (data) => {
 
@@ -75,7 +84,7 @@ export default function ModalCanaisMensagem() {
                     <StyledTitleMarcacaoMsg>Conteúdo da mensagem:</StyledTitleMarcacaoMsg>
                     <StyledInputMsg></StyledInputMsg>
                     <StyleContainerButton>
-                        <StyleCancelButton>Cancelar</StyleCancelButton>
+                        <StyleCancelButton onClick={handleCloseModal}>Cancelar</StyleCancelButton>
                         <StyleNextButton>Próximo</StyleNextButton>
                     </StyleContainerButton>
                 </StyledContainerModal>

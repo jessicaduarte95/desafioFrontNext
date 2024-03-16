@@ -12,13 +12,13 @@ export default function Principal() {
     const openModal =  useAppSelector((state) => state.stepsCadastro);
     const dispatch = useDispatch<AppDispatch>();
 
-    const teste = () => {
+    const open = () => {
         dispatch(steps("cadastro"));
     }
 
     return (
         <StyledContainerPrincipal>
-            <StyledButton onClick={teste}>+<strong></strong> Inserir</StyledButton>
+            <StyledButton onClick={open}>+<strong></strong> Inserir</StyledButton>
             {
                 openModal.step == "cadastro" ?
                 <ModalInserir/>

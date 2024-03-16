@@ -74,6 +74,10 @@ export default function ModalInserir() {
     const { register, handleSubmit, reset } = useForm<DataForm>()
     const dispatch = useDispatch<AppDispatch>();
 
+    const handleCloseModal = () => {
+        dispatch(steps(""));
+    }
+
     const onSubmit: SubmitHandler<DataForm> = (data) => {
         try {
             userSchema.parse(data);
@@ -205,7 +209,7 @@ export default function ModalInserir() {
 
                     </StyledContainerForm>
                     <StyleContainerButton>
-                        <StyleCancelButton>Cancelar</StyleCancelButton>
+                        <StyleCancelButton onClick={handleCloseModal}>Cancelar</StyleCancelButton>
                         <StyleNextButton>Próximo</StyleNextButton>
                     </StyleContainerButton>
                 </StyledContainerModal>
