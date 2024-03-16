@@ -93,7 +93,7 @@ export const StyledInputNome = styled.input`
     border: 1px solid #CCD1D3;
     border-radius: 2px;
     margin-right: 32px;
-    width: 98%;
+    width: 97%;
 `
 
 export const StyledSpan = styled.span`
