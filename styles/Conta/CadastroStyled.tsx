@@ -25,12 +25,13 @@ export const StyledContainerSelectInput = styled.div`
     width: 100%;
 `
 
-export const StyledContainerTwoFields = styled.div`
+export const StyledContainerFields = styled.div`
     width: 48%;
 `
 
 export const StyledContainerThreeFields = styled.div `
-    
+    width: 48%;
+    background-color: red;
 `
 
 export const StyledTitleSelectInput = styled.p`
@@ -53,6 +54,23 @@ export const StyledInput = styled.input`
     border-radius: 2px;
     margin-right: 32px;
     width: 93%;
+`
+
+export const StyledInputFields = styled.input`
+    font-size: 16px;
+    padding: 4px 16px 4px 16px;
+    border: 1px solid #CCD1D3;
+    border-radius: 2px;
+    margin-left: 15px;
+    width: 85%;
+`
+export const StyledInputFieldCEP = styled.input`
+    font-size: 16px;
+    padding: 4px 16px 4px 16px;
+    border: 1px solid #CCD1D3;
+    border-radius: 2px;
+    margin-right: 15px;
+    width: 85%;
 `
 
 export const StyledInputNome = styled.input`

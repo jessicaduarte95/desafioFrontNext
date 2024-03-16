@@ -20,8 +20,10 @@ import {
     StyledSelect,
     StyledContainerSelectInput,
     StyledInput,
-    StyledContainerTwoFields,
-    StyledInputNome
+    StyledContainerFields,
+    StyledInputNome,
+    StyledInputFields,
+    StyledInputFieldCEP
 } from '../../styles/Conta/CadastroStyled'
 import { useForm, SubmitHandler } from 'react-hook-form';
 
@@ -83,7 +85,7 @@ export default function ModalInserir() {
                             <option value="opcao3">José De Oliveira</option>
                         </StyledSelect>
                         <StyledContainerSelectInput>
-                            <StyledContainerTwoFields>
+                            <StyledContainerFields>
                                 <StyledTitleSelectInput>Banco: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelect {...register("banco")}>
                                     <option value="opcao">Selecione</option>
@@ -91,78 +93,78 @@ export default function ModalInserir() {
                                     <option value="opcao2">Banco do Brasil</option>
                                     <option value="opcao3">Itaú</option>
                                 </StyledSelect>
-                            </StyledContainerTwoFields>
-                            <StyledContainerTwoFields>
+                            </StyledContainerFields>
+                            <StyledContainerFields>
                                 <StyledTitleSelectInput>Tipo de Conta: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelect {...register("tipoConta")}>
                                     <option value="opcao">Selecione</option>
                                     <option value="opcao1">Conta Corrente</option>
                                     <option value="opcao2">Poupança</option>
                                 </StyledSelect>
-                            </StyledContainerTwoFields>
+                            </StyledContainerFields>
                         </StyledContainerSelectInput>
 
                         <StyledContainerSelectInput>
-                            <StyledContainerTwoFields>
+                            <StyledContainerFields>
                                 <StyledTitleSelectInput>Agência: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledInput placeholder="Digite aqui" {...register("agencia")}></StyledInput>
-                            </StyledContainerTwoFields>
-                            <StyledContainerTwoFields>
+                            </StyledContainerFields>
+                            <StyledContainerFields>
                                 <StyledTitleSelectInput>Conta com dígito: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledInput placeholder="Digite aqui" {...register("conta")}></StyledInput>
-                            </StyledContainerTwoFields>
+                            </StyledContainerFields>
                         </StyledContainerSelectInput>
 
                         <StyledContainerSelectInput>
-                            <div>
+                            <StyledContainerFields>
                                 <StyledTitleSelectInput>Tipo de Pessoa: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelect {...register("tipoPessoa")}>
                                     <option value="opcao">Selecione</option>
                                     <option value="opcao1">Pessoa Física</option>
                                     <option value="opcao2">Pessoa Jurídica</option>
                                 </StyledSelect>
-                            </div>
-                            <div>
+                            </StyledContainerFields>
+                            <StyledContainerFields>
                                 <StyledTitleSelectInput>CPF: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                                <StyledInput placeholder="Digite aqui" {...register("CPF")}></StyledInput>
-                            </div>
-                            <div>
+                                <StyledInputFields placeholder="Digite aqui" {...register("CPF")}></StyledInputFields>
+                            </StyledContainerFields>
+                            <StyledContainerFields>
                                 <StyledTitleSelectInput>Telefone: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                                <StyledInput placeholder="Digite aqui" {...register("telefone")}></StyledInput>
-                            </div>
+                                <StyledInputFields placeholder="Digite aqui" {...register("telefone")}></StyledInputFields>
+                            </StyledContainerFields>
                         </StyledContainerSelectInput>
 
                         <StyledTitleSelectInput>Nome completo: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                         <StyledInputNome placeholder="Digite aqui" {...register("nome")}></StyledInputNome>
 
                         <StyledContainerSelectInput>
-                            <div>
+                            <StyledContainerFields>
                                 <StyledTitleSelectInput>CEP: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                                <StyledInput placeholder="Digite aqui" {...register("CEP")}></StyledInput>
-                            </div>
-                            <div>
+                                <StyledInputFieldCEP placeholder="Digite aqui" {...register("CEP")}></StyledInputFieldCEP>
+                            </StyledContainerFields>
+                            <StyledContainerFields>
                                 <StyledTitleSelectInput>Estado: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelect {...register("estado")}>
                                     <option value="opcao">Selecione</option>
                                     <option value="opcao1">Teste1</option>
                                     <option value="opcao2">Teste2</option>
                                 </StyledSelect>
-                            </div>
-                            <div>
+                            </StyledContainerFields>
+                            <StyledContainerFields>
                                 <StyledTitleSelectInput>Cidade: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                                <StyledInput placeholder="Digite aqui" {...register("cidade")}></StyledInput>
-                            </div>
+                                <StyledInputFields placeholder="Digite aqui" {...register("cidade")}></StyledInputFields>
+                            </StyledContainerFields>
                         </StyledContainerSelectInput>
 
                         <StyledContainerSelectInput>
-                            <StyledContainerTwoFields>
+                            <StyledContainerFields>
                                 <StyledTitleSelectInput>Endereço: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledInput placeholder="Digite aqui" {...register("endereco")}></StyledInput>
-                            </StyledContainerTwoFields>
-                            <StyledContainerTwoFields>
+                            </StyledContainerFields>
+                            <StyledContainerFields>
                                 <StyledTitleSelectInput>Número: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledInput placeholder="Digite aqui" {...register("numero")}></StyledInput>
-                            </StyledContainerTwoFields>
+                            </StyledContainerFields>
                         </StyledContainerSelectInput>
 
                     </StyledContainerForm>
