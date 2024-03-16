@@ -3,11 +3,26 @@ import {
     StyledContainerPrincipal 
 } from '../../styles/Conta/PrincipalStyled'
 import ModalInserir from '../../pages/Conta/ModalInserir';
+import { useAppSelector, AppDispatch } from '../../Redux/store';
+import { useDispatch } from 'react-redux';
+import { steps } from '../../Redux/Cadastro/sliceCanaisMensagem';
 export default function Principal() {
+
+    const openModal =  useAppSelector((state) => state.stepsCadastro);
+    const dispatch = useDispatch<AppDispatch>();
+
+    const teste = () => {
+        dispatch(steps("cadastro"));
+    }
+
     return (
         <StyledContainerPrincipal>
-            <StyledButton>+<strong></strong> Inserir</StyledButton>
-            <ModalInserir/>
+            <StyledButton onClick={teste}>+<strong></strong> Inserir</StyledButton>
+            {
+                openModal.step == "cadastro" ?
+                <ModalInserir/>
+                : ''
+            }
         </StyledContainerPrincipal>
     )
 }

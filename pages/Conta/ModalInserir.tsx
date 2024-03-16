@@ -30,10 +30,12 @@ import {
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { cadastro } from '../../Redux/Cadastro/slice';
-import { AppDispatch } from '../../Redux/store';
+import { steps } from '../../Redux/Cadastro/sliceCanaisMensagem';
+import { AppDispatch, useAppSelector } from '../../Redux/store';
 import { z } from 'zod';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ModalCanaisMensagem from './ModalCanaisMensagem';
 
 interface DataForm {
     idProfissional: string;
@@ -79,6 +81,7 @@ export default function ModalInserir() {
             dispatch(cadastro(data));
             reset();
             toast.success("Dados gravados com sucesso!", { theme: "colored" });
+            dispatch(steps("canaisMensagem"));
         } catch (error) {
             console.error('Erro de validação:', error);
             toast.error("Atenção! Todos os campos devem ser preenchidos e com dados válidos.", { theme: "colored" });
