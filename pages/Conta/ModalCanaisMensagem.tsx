@@ -46,7 +46,7 @@ export default function ModalCanaisMensagem() {
     }
 
     const onSubmit: SubmitHandler<DataForm> = (data) => {
-
+        dispatch(steps("formaPagamento"));
     }
 
     return (
@@ -85,7 +85,7 @@ export default function ModalCanaisMensagem() {
                     <StyledInputMsg></StyledInputMsg>
                     <StyleContainerButton>
                         <StyleCancelButton onClick={handleCloseModal}>Cancelar</StyleCancelButton>
-                        <StyleNextButton>Próximo</StyleNextButton>
+                        <StyleNextButton type='submit'>Próximo</StyleNextButton>
                     </StyleContainerButton>
                 </StyledContainerModal>
             </form>
