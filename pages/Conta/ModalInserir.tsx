@@ -30,6 +30,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { cadastro } from '../../Redux/Cadastro/slice';
 import { AppDispatch } from '../../Redux/store';
+import { z } from 'zod';
 
 interface DataForm {
     profissional: string;
@@ -49,12 +50,35 @@ interface DataForm {
 }
 export default function ModalInserir() {
 
+    const userSchema = z.object({
+        profissional: z.string().min(3),
+        banco: z.string(),
+        tipoConta: z.string(),
+        agencia: z.string(),
+        conta: z.string(),
+        tipoPessoa: z.string(),
+        CPF: z.string().min(11),
+        telefone: z.string().min(10),
+        nome: z.string(),
+        CEP: z.string().min(8),
+        estado: z.string(),
+        cidade: z.string(),
+        endereco: z.string(),
+        numero: z.string().min(1)
+    });
+
     const { register, handleSubmit, reset } = useForm<DataForm>()
     const dispatch = useDispatch<AppDispatch>();
 
     const onSubmit: SubmitHandler<DataForm> = (data) => {
-        dispatch(cadastro(data));
-        reset();
+        try {
+            const validatedData = userSchema.parse(data);
+            dispatch(cadastro(data));
+            reset();
+            console.log('Dados válidos:', validatedData);
+        } catch (error) {
+            console.error('Erro de validação:', error);
+        }
     }
 
     return (
