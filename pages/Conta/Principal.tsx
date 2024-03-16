@@ -18,7 +18,7 @@ export default function Principal() {
 
     return (
         <StyledContainerPrincipal>
-            <StyledButton onClick={open}>+<strong></strong> Inserir</StyledButton>
+            <StyledButton onClick={open}>+<strong></strong> Ativar o PsicoBank</StyledButton>
             {
                 openModal.step == "cadastro" ?
                 <ModalInserir/>

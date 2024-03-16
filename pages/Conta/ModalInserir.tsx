@@ -35,6 +35,7 @@ import { AppDispatch, useAppSelector } from '../../Redux/store';
 import { z } from 'zod';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { profissional, banco, conta, tipoPessoa, estado } from '../../data';
 
 interface DataForm {
     idProfissional: string;
@@ -120,26 +121,27 @@ export default function ModalInserir() {
                         <StyledTitleSelectInput>Profissional: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                         <StyledSelect {...register("idProfissional")}>
                             <option value="">Selecione</option>
-                            <option value="1">João Silva</option>
-                            <option value="2">Joaquina Sousa</option>
-                            <option value="3">José De Oliveira</option>
+                            {profissional.map((profissional) =>
+                                <option key={profissional.idProfissional} value={profissional.idProfissional}>{profissional.nome}</option>
+                            )}
                         </StyledSelect>
                         <StyledContainerSelectInput>
                             <StyledContainerFields>
                                 <StyledTitleSelectInput>Banco: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelectBancoConta {...register("idBanco")}>
                                     <option value="">Selecione</option>
-                                    <option value="1">Bradesco</option>
-                                    <option value="2">Banco do Brasil</option>
-                                    <option value="3">Itaú</option>
+                                    {banco.map((banco) =>
+                                        <option key={banco.idBanco} value={banco.idBanco}>{banco.nome}</option>
+                                    )}
                                 </StyledSelectBancoConta>
                             </StyledContainerFields>
                             <StyledContainerFields>
                                 <StyledTitleSelectInput>Tipo de Conta: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelectBancoConta {...register("idTipoConta")}>
                                     <option value="">Selecione</option>
-                                    <option value="1">Conta Corrente</option>
-                                    <option value="2">Poupança</option>
+                                    {conta.map((conta) =>
+                                        <option key={conta.idTipoConta} value={conta.idTipoConta}>{conta.nome}</option>
+                                    )}
                                 </StyledSelectBancoConta>
                             </StyledContainerFields>
                         </StyledContainerSelectInput>
@@ -160,8 +162,9 @@ export default function ModalInserir() {
                                 <StyledTitleSelectInput>Tipo de Pessoa: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelect {...register("idTipoPessoa")}>
                                     <option value="">Selecione</option>
-                                    <option value="1">Pessoa Física</option>
-                                    <option value="2">Pessoa Jurídica</option>
+                                    {tipoPessoa.map((tipoPessoa) =>
+                                        <option key={tipoPessoa.idTipoPessoa} value={tipoPessoa.idTipoPessoa}>{tipoPessoa.nome}</option>
+                                    )}
                                 </StyledSelect>
                             </StyledContainerFields>
                             <StyledContainerFields>
@@ -186,8 +189,9 @@ export default function ModalInserir() {
                                 <StyledTitleSelectInput>Estado: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelect {...register("idEstado")}>
                                     <option value="">Selecione</option>
-                                    <option value="1">Teste1</option>
-                                    <option value="2">Teste2</option>
+                                    {estado.map((estado) =>
+                                        <option key={estado.idEstado} value={estado.idEstado}>{estado.nome}</option>
+                                    )}
                                 </StyledSelect>
                             </StyledContainerFields>
                             <StyledContainerFields>
