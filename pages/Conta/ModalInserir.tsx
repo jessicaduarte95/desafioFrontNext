@@ -23,7 +23,8 @@ import {
     StyledContainerFields,
     StyledInputNome,
     StyledInputFields,
-    StyledInputFieldCEP
+    StyledInputFieldCEP,
+    StyledSelectBancoConta
 } from '../../styles/Conta/CadastroStyled'
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
@@ -91,20 +92,20 @@ export default function ModalInserir() {
                         <StyledContainerSelectInput>
                             <StyledContainerFields>
                                 <StyledTitleSelectInput>Banco: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                                <StyledSelect {...register("banco")}>
+                                <StyledSelectBancoConta {...register("banco")}>
                                     <option value="opcao">Selecione</option>
                                     <option value="opcao1">Bradesco</option>
                                     <option value="opcao2">Banco do Brasil</option>
                                     <option value="opcao3">Itaú</option>
-                                </StyledSelect>
+                                </StyledSelectBancoConta>
                             </StyledContainerFields>
                             <StyledContainerFields>
                                 <StyledTitleSelectInput>Tipo de Conta: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                                <StyledSelect {...register("tipoConta")}>
+                                <StyledSelectBancoConta {...register("tipoConta")}>
                                     <option value="opcao">Selecione</option>
                                     <option value="opcao1">Conta Corrente</option>
                                     <option value="opcao2">Poupança</option>
-                                </StyledSelect>
+                                </StyledSelectBancoConta>
                             </StyledContainerFields>
                         </StyledContainerSelectInput>
 

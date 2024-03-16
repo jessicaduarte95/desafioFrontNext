@@ -51,13 +51,21 @@ export const StyledSelect = styled.select`
     width: 100%;
 `
 
+export const StyledSelectBancoConta = styled.select`
+    font-size: 16px;
+    padding: 4px 16px 4px 16px;
+    border: 1px solid #CCD1D3;
+    border-radius: 2px;
+    width: 98%;
+`
+
 export const StyledInput = styled.input`
     font-size: 16px;
     padding: 4px 16px 4px 16px;
     border: 1px solid #CCD1D3;
     border-radius: 2px;
-    margin-right: 32px;
-    width: 93%;
+    margin-left: 5px;
+    width: 90%;
     @media (max-width: 800px) {
         margin-left: 0;
         width: 92%;
