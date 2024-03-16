@@ -113,7 +113,7 @@ export default function ModalInserir() {
 
                         <StyledTitleSelectInput>Profissional: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                         <StyledSelect {...register("idProfissional")}>
-                            <option value="opcao">Selecione</option>
+                            <option value="">Selecione</option>
                             <option value="1">João Silva</option>
                             <option value="2">Joaquina Sousa</option>
                             <option value="3">José De Oliveira</option>
@@ -122,7 +122,7 @@ export default function ModalInserir() {
                             <StyledContainerFields>
                                 <StyledTitleSelectInput>Banco: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelectBancoConta {...register("idBanco")}>
-                                    <option value="opcao">Selecione</option>
+                                    <option value="">Selecione</option>
                                     <option value="1">Bradesco</option>
                                     <option value="2">Banco do Brasil</option>
                                     <option value="3">Itaú</option>
@@ -131,7 +131,7 @@ export default function ModalInserir() {
                             <StyledContainerFields>
                                 <StyledTitleSelectInput>Tipo de Conta: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelectBancoConta {...register("idTipoConta")}>
-                                    <option value="opcao">Selecione</option>
+                                    <option value="">Selecione</option>
                                     <option value="1">Conta Corrente</option>
                                     <option value="2">Poupança</option>
                                 </StyledSelectBancoConta>
@@ -153,7 +153,7 @@ export default function ModalInserir() {
                             <StyledContainerFields>
                                 <StyledTitleSelectInput>Tipo de Pessoa: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelect {...register("idTipoPessoa")}>
-                                    <option value="opcao">Selecione</option>
+                                    <option value="">Selecione</option>
                                     <option value="1">Pessoa Física</option>
                                     <option value="2">Pessoa Jurídica</option>
                                 </StyledSelect>
@@ -179,7 +179,7 @@ export default function ModalInserir() {
                             <StyledContainerFields>
                                 <StyledTitleSelectInput>Estado: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
                                 <StyledSelect {...register("idEstado")}>
-                                    <option value="opcao">Selecione</option>
+                                    <option value="">Selecione</option>
                                     <option value="1">Teste1</option>
                                     <option value="2">Teste2</option>
                                 </StyledSelect>
