@@ -23,10 +23,14 @@ export const StyledContainerSelectInput = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
+    @media (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 export const StyledContainerFields = styled.div`
-    width: 48%;
+    width: 100%;
 `
 
 export const StyledContainerThreeFields = styled.div `
@@ -54,6 +58,10 @@ export const StyledInput = styled.input`
     border-radius: 2px;
     margin-right: 32px;
     width: 93%;
+    @media (max-width: 800px) {
+        margin-left: 0;
+        width: 92%;
+    }
 `
 
 export const StyledInputFields = styled.input`
@@ -63,6 +71,10 @@ export const StyledInputFields = styled.input`
     border-radius: 2px;
     margin-left: 15px;
     width: 85%;
+    @media (max-width: 800px) {
+        margin-left: 0;
+        width: 92%;
+    }
 `
 export const StyledInputFieldCEP = styled.input`
     font-size: 16px;
@@ -71,6 +83,10 @@ export const StyledInputFieldCEP = styled.input`
     border-radius: 2px;
     margin-right: 15px;
     width: 85%;
+    @media (max-width: 800px) {
+        margin-right: 0;
+        width: 92%;
+    }
 `
 
 export const StyledInputNome = styled.input`
@@ -80,4 +96,8 @@ export const StyledInputNome = styled.input`
     border-radius: 2px;
     margin-right: 32px;
     width: 97%;
+    @media (max-width: 800px) {
+        margin-right: 0;
+        width: 92%;
+    }
 `

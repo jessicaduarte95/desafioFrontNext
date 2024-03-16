@@ -13,13 +13,20 @@ export const StyledModalOverlay = styled.div`
 `
 
 export const StyledContainerModal = styled.div`
-    max-width: 100%;
+    max-width: 90%;
     max-height: 85vh;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     scrollbar-width: thin;
+    @media (max-width: 800px) {
+        width: 500px;
+    }
+    @media (max-width: 500px) {
+        width: 350px;
+    }
 `
 
 export const StyledModalTitle = styled.p`
