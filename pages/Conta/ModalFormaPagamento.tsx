@@ -15,11 +15,9 @@ import {
     StyledTextCheckBox,
     StyledContainerValorMulta,
     StyledValorMultaText,
-    StyledValorMultaInput
-} from '../../styles/Conta/FormaPagamentoStyled';
-import {
+    StyledValorMultaInput,
     StyledSelect
-} from '../../styles/Conta/CadastroStyled';
+} from '../../styles/Conta/FormaPagamentoStyled';
 import { useAppSelector } from '../../Redux/store';
 import { profissional, meiosPagamento } from '../../data';
 

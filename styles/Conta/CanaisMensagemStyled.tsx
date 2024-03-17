@@ -80,3 +80,15 @@ export const StyledInputMsg = styled.input `
         border-color: #2797BA;
     }
 `
+
+export const StyledSelect = styled.select`
+    font-size: 16px;
+    padding: 4px 16px 4px 16px;
+    border: 1px solid #CCD1D3;
+    border-radius: 2px;
+    width: 100%;
+    outline: none;
+    &:focus {
+        border-color: #2797BA;
+    }
+`

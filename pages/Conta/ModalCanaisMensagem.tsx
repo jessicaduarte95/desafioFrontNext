@@ -3,9 +3,6 @@ import {
     StyledSpan
 } from '../../styles/Conta/ModalStyled';
 import {
-    StyledSelect
-} from '../../styles/Conta/CadastroStyled'
-import {
     StyledTitleInput,
     StyledContainerInput,
     StyledModalTitleAlert,
@@ -15,6 +12,7 @@ import {
     StyledInputMsg,
     StyledContainerSelectButton,
     StyledSelectMarcacao,
+    StyledSelect
 } from '../../styles/Conta/CanaisMensagemStyled'
 import {
     StyledButtonInsert
