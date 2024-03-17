@@ -52,6 +52,7 @@ interface DataForm {
     cidade: string;
     endereco: string;
     numero: string;
+    msg: string;
 }
 export default function ModalInserir() {
 

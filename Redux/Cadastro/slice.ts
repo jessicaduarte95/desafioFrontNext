@@ -15,6 +15,7 @@ interface Data {
     cidade: string;
     endereco: string;
     numero: string;
+    msg: string;
 }
 
 const initialState: Data[] = [];
@@ -24,7 +25,6 @@ export const cadastroAssinantes = createSlice({
     initialState,
     reducers: {
         cadastro: (state, action: PayloadAction<Data>) => {
-            console.log("Action",action.payload)
             return [...state, action.payload]
         }
     }

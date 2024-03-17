@@ -27,9 +27,14 @@ import {
 } from '../../styles/Conta/FormaPagamentoStyled';
 import {
     StyledSelect
-} from '../../styles/Conta/CadastroStyled'
+} from '../../styles/Conta/CadastroStyled';
+import { useAppSelector } from '../../Redux/store';
 
 export default function ModalFormaPagamento() {
+
+    const openModal =  useAppSelector((state) => state.cadastroReducer);
+    console.log("Dados: ", openModal)
+
     return (
         <StyledModalOverlay>
             <StyledContainerModal>

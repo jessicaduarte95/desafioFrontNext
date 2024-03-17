@@ -30,13 +30,34 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { AppDispatch, useAppSelector } from '../../Redux/store';
 import { useDispatch } from 'react-redux';
 import { steps } from '../../Redux/Cadastro/sliceCanaisMensagem';
+import { cadastro } from '../../Redux/Cadastro/slice';
 import { profissional } from '../../data';
+import { z } from 'zod';
 
 
 interface DataForm {
     idProfissional: string;
+    idBanco: string;
+    idTipoConta: string;
+    agencia: number;
+    conta: number;
+    idTipoPessoa: string;
+    CPF: number;
+    telefone: number;
+    nome: string;
+    CEP: number;
+    idEstado: string;
+    cidade: string;
+    endereco: string;
+    numero: string;
+    msg: string;
 }
+
 export default function ModalCanaisMensagem() {
+
+    const userSchema = z.object({
+        msg: z.string()
+    });
 
     const { register, handleSubmit, reset } = useForm<DataForm>()
 
@@ -46,7 +67,6 @@ export default function ModalCanaisMensagem() {
     var nomeProfissional: string = '';
 
     profissional.forEach(element => {
-        console.log(element)
         if (element.idProfissional == parseInt(idProfissional)) {
             nomeProfissional = element.nome
         }
@@ -58,7 +78,14 @@ export default function ModalCanaisMensagem() {
     }
 
     const onSubmit: SubmitHandler<DataForm> = (data) => {
-        dispatch(steps("formaPagamento"));
+        try {
+            userSchema.parse(data);
+            dispatch(cadastro(data));
+            dispatch(steps("formaPagamento"));
+        } catch (error) {
+            console.error('Erro de validação:', error);
+        }
+
     }
 
     return (
@@ -91,7 +118,7 @@ export default function ModalCanaisMensagem() {
                     </StyledContainerSelectButton>
 
                     <StyledTitleMarcacaoMsg>Conteúdo da mensagem:</StyledTitleMarcacaoMsg>
-                    <StyledInputMsg></StyledInputMsg>
+                    <StyledInputMsg {...register("msg")}></StyledInputMsg>
                     <StyleContainerButton>
                         <StyleCancelButton onClick={handleCloseModal}>Cancelar</StyleCancelButton>
                         <StyleNextButton type='submit'>Próximo</StyleNextButton>
