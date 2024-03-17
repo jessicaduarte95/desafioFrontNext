@@ -27,9 +27,10 @@ import {
     StyledButtonInsert
 } from '../../styles/Conta/ButtonStyled';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { AppDispatch } from '../../Redux/store';
+import { AppDispatch, useAppSelector } from '../../Redux/store';
 import { useDispatch } from 'react-redux';
 import { steps } from '../../Redux/Cadastro/sliceCanaisMensagem';
+import { profissional } from '../../data';
 
 
 interface DataForm {
@@ -40,6 +41,17 @@ export default function ModalCanaisMensagem() {
     const { register, handleSubmit, reset } = useForm<DataForm>()
 
     const dispatch = useDispatch<AppDispatch>();
+    const data = useAppSelector((state) => state.cadastroReducer);
+    const idProfissional = data[0].idProfissional;
+    var nomeProfissional: string = '';
+
+    profissional.forEach(element => {
+        console.log(element)
+        if (element.idProfissional == parseInt(idProfissional)) {
+            nomeProfissional = element.nome
+        }
+    });
+
 
     const handleCloseModal = () => {
         dispatch(steps(""));
@@ -58,10 +70,7 @@ export default function ModalCanaisMensagem() {
                     <StyledContainerInput>
                         <StyledTitleInput>Profissional: <StyledSpan>*</StyledSpan></StyledTitleInput>
                         <StyledSelect disabled>
-                            <option value="">Selecione</option>
-                            <option value="1">João Silva</option>
-                            <option value="2">Joaquina Sousa</option>
-                            <option value="3">José De Oliveira</option>
+                            <option value="">{nomeProfissional}</option>
                         </StyledSelect>
                     </StyledContainerInput>
                     <StyledModalTitleAlert>Enviar cobrança por e-mail:</StyledModalTitleAlert>

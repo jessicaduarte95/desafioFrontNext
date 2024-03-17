@@ -25,7 +25,7 @@ export const cadastroAssinantes = createSlice({
     reducers: {
         cadastro: (state, action: PayloadAction<Data>) => {
             console.log("Action",action.payload)
-            return [...state]
+            return [...state, action.payload]
         }
     }
 })
