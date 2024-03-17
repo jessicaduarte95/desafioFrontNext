@@ -53,4 +53,9 @@ export const StyledButtonInsert = styled.button`
     &:hover {
         background-color: #DDF2F8;
     }
+    @media (max-width: 800px) {
+        width: 133px;
+        height: 32px;
+        margin-top: 15px
+    }
 `

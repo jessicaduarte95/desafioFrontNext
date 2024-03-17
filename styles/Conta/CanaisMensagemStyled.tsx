@@ -45,6 +45,10 @@ export const StyledContainerSelectButton = styled.div`
     justify-content: space-between;
     padding: 16px 0px;
     margin: 0px 32px;
+    @media (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+    }
 `
 export const StyledSelectMarcacao = styled.select`
     font-size: 16px;
@@ -52,6 +56,10 @@ export const StyledSelectMarcacao = styled.select`
     border: 1px solid #CCD1D3;
     border-radius: 2px;
     width: 657px;
+    @media (max-width: 800px) {
+        width: 100%;
+    }
+
 `
 
 export const StyledInputMsg = styled.input `
