@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import cadastroReducer from './Cadastro/slice';
-import stepsCadastro from './Cadastro/sliceCanaisMensagem';
+import stepsCadastro from './Cadastro/sliceSteps';
 
 export const store = configureStore({
   reducer: {

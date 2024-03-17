@@ -15,7 +15,7 @@ import {
 import ModalInserir from '../../pages/Conta/ModalInserir';
 import { useAppSelector, AppDispatch } from '../../Redux/store';
 import { useDispatch } from 'react-redux';
-import { steps } from '../../Redux/Cadastro/sliceCanaisMensagem';
+import { steps } from '../../Redux/Cadastro/sliceSteps';
 import { cadastro } from '../../Redux/Cadastro/slice';
 import ModalCanaisMensagem from './ModalCanaisMensagem';
 import ModalFormaPagamento from './ModalFormaPagamento';

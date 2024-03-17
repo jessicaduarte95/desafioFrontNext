@@ -21,7 +21,7 @@ import {
 } from '../../styles/Conta/ButtonStyled';
 import { AppDispatch, useAppSelector } from '../../Redux/store';
 import { useDispatch } from 'react-redux';
-import { steps } from '../../Redux/Cadastro/sliceCanaisMensagem';
+import { steps } from '../../Redux/Cadastro/sliceSteps';
 import { cadastro } from '../../Redux/Cadastro/slice';
 import { profissional } from '../../data';
 import { z } from 'zod';

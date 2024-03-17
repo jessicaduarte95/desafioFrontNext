@@ -21,7 +21,7 @@ import {
     StyledSelect
 } from '../../styles/Conta/CadastroStyled';
 import { AppDispatch, useAppSelector } from '../../Redux/store';
-import { steps } from '../../Redux/Cadastro/sliceCanaisMensagem';
+import { steps } from '../../Redux/Cadastro/sliceSteps';
 import { useDispatch } from 'react-redux';
 import { profissional, meiosPagamento } from '../../data';
 
