@@ -16,6 +16,12 @@ interface Data {
     endereco: string;
     numero: string;
     msg: string;
+    meioPagamento1: boolean;
+    meioPagamento2: boolean;
+    meioPagamento3: boolean;
+    cobrarMulta: boolean;
+    valorMulta: string;
+    jurosMulta: boolean;
 }
 
 const initialState: Data[] = [];
