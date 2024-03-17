@@ -28,12 +28,48 @@ import {
 import {
     StyledSelect
 } from '../../styles/Conta/CadastroStyled';
-import { useAppSelector } from '../../Redux/store';
+import { AppDispatch, useAppSelector } from '../../Redux/store';
+import { steps } from '../../Redux/Cadastro/sliceCanaisMensagem';
+import { useDispatch } from 'react-redux';
+import { cadastro } from '../../Redux/Cadastro/slice';
+import { profissional, meiosPagamento } from '../../data';
+import { z } from 'zod';
+
+interface DataForm {
+    idProfissional: string;
+    idBanco: string;
+    idTipoConta: string;
+    agencia: number;
+    conta: number;
+    idTipoPessoa: string;
+    CPF: number;
+    telefone: number;
+    nome: string;
+    CEP: number;
+    idEstado: string;
+    cidade: string;
+    endereco: string;
+    numero: string;
+    msg: string;
+}
 
 export default function ModalFormaPagamento() {
 
-    const openModal =  useAppSelector((state) => state.cadastroReducer);
-    console.log("Dados: ", openModal)
+    const dispatch = useDispatch<AppDispatch>();
+    const data = useAppSelector((state) => state.cadastroReducer);
+    const idProfissional = data[0].idProfissional;
+    var nomeProfissional: string = '';
+    console.log("Dados: ", data)
+
+    profissional.forEach(element => {
+        if (element.idProfissional == parseInt(idProfissional)) {
+            nomeProfissional = element.nome
+        }
+    });
+
+    const handleCloseModal = () => {
+        dispatch(steps(""));
+    }
 
     return (
         <StyledModalOverlay>
@@ -41,53 +77,46 @@ export default function ModalFormaPagamento() {
                 <StyledModalTitle>Ativar o PsicoBank</StyledModalTitle>
                 <StyledModalSubTitle>Preencha os itens a seguir para configurar o PsicoBank</StyledModalSubTitle>
                 <StyledContainerInput>
-                        <StyledTitleInput>Profissional: <StyledSpan>*</StyledSpan></StyledTitleInput>
-                        <StyledSelect disabled>
-                            <option value="">Selecione</option>
-                            <option value="1">João Silva</option>
-                            <option value="2">Joaquina Sousa</option>
-                            <option value="3">José De Oliveira</option>
-                        </StyledSelect>
-                    </StyledContainerInput>
-                    <StyledModalTitleAlert>Forma de pagamento da cobrança</StyledModalTitleAlert>
-                    <StyledAlertContent>
-                        <StyledAlertText>
-                            Escolha quais as opções de pagamento que estarão disponíveis para o seu cliente no link das mensagens de cobrança.
-                        </StyledAlertText>
-                    </StyledAlertContent>
-                    <StyledTitlePagamentoMulta>Disponibilizar meios de pagamento:<StyledSpan>*</StyledSpan></StyledTitlePagamentoMulta>
+                    <StyledTitleInput>Profissional: <StyledSpan>*</StyledSpan></StyledTitleInput>
+                    <StyledSelect disabled>
+                        <option value="">{nomeProfissional}</option>
+                    </StyledSelect>
+                </StyledContainerInput>
+                <StyledModalTitleAlert>Forma de pagamento da cobrança</StyledModalTitleAlert>
+                <StyledAlertContent>
+                    <StyledAlertText>
+                        Escolha quais as opções de pagamento que estarão disponíveis para o seu cliente no link das mensagens de cobrança.
+                    </StyledAlertText>
+                </StyledAlertContent>
+                <StyledTitlePagamentoMulta>Disponibilizar meios de pagamento:<StyledSpan>*</StyledSpan></StyledTitlePagamentoMulta>
 
-                    <StyledContainerCheckBox>
-                        <StyledCheckBox type='checkbox'></StyledCheckBox>
-                        <StyledTextCheckBox>Pix</StyledTextCheckBox>
-                    </StyledContainerCheckBox>
-                    <StyledContainerCheckBox>
-                        <StyledCheckBox type='checkbox'></StyledCheckBox>
-                        <StyledTextCheckBox>Cartão de Crédito</StyledTextCheckBox>
-                    </StyledContainerCheckBox>
-                    <StyledContainerCheckBox>
-                        <StyledCheckBox type='checkbox'></StyledCheckBox>
-                        <StyledTextCheckBox>Boleto Bancário</StyledTextCheckBox>
-                    </StyledContainerCheckBox>
+                {
+                    meiosPagamento.map((pagamento) =>
+                        <StyledContainerCheckBox>
+                            <StyledCheckBox type='checkbox'></StyledCheckBox>
+                            <StyledTextCheckBox key={pagamento.idPagamento}>{pagamento.nome}</StyledTextCheckBox>
+                        </StyledContainerCheckBox>
+                    )
+                }
 
-                    <StyledTitlePagamentoMulta>Definir multas e juros para todos os boletos após o vencimento</StyledTitlePagamentoMulta>
-                    <StyledContainerCheckBox>
-                        <StyledCheckBox type='checkbox'></StyledCheckBox>
-                        <StyledTextCheckBox>Cobrar Multa</StyledTextCheckBox>
-                    </StyledContainerCheckBox>
+                <StyledTitlePagamentoMulta>Definir multas e juros para todos os boletos após o vencimento</StyledTitlePagamentoMulta>
+                <StyledContainerCheckBox>
+                    <StyledCheckBox type='checkbox'></StyledCheckBox>
+                    <StyledTextCheckBox>Cobrar Multa</StyledTextCheckBox>
+                </StyledContainerCheckBox>
 
-                    <StyledContainerValorMulta>
-                        <StyledValorMultaText>Valor da multa em %:</StyledValorMultaText>
-                        <StyledValorMultaInput placeholder='0,0' type='number'></StyledValorMultaInput>
-                    </StyledContainerValorMulta>
+                <StyledContainerValorMulta>
+                    <StyledValorMultaText>Valor da multa em %:</StyledValorMultaText>
+                    <StyledValorMultaInput placeholder='0,0' type='number'></StyledValorMultaInput>
+                </StyledContainerValorMulta>
 
-                    <StyledContainerCheckBox>
-                        <StyledCheckBox type='checkbox'></StyledCheckBox>
-                        <StyledTextCheckBox>Cobrar juros por dia de atraso (valor 1% ao mês)</StyledTextCheckBox>
-                    </StyledContainerCheckBox>
+                <StyledContainerCheckBox>
+                    <StyledCheckBox type='checkbox'></StyledCheckBox>
+                    <StyledTextCheckBox>Cobrar juros por dia de atraso (valor 1% ao mês)</StyledTextCheckBox>
+                </StyledContainerCheckBox>
 
                 <StyleContainerButton>
-                    <StyleCancelButton>Cancelar</StyleCancelButton>
+                    <StyleCancelButton onClick={handleCloseModal}>Cancelar</StyleCancelButton>
                     <StyleNextButton type='submit'>Próximo</StyleNextButton>
                 </StyleContainerButton>
             </StyledContainerModal>
