@@ -152,7 +152,7 @@ export default function ModalInserir({ register }: any) {
                     </StyledContainerFields>
                     <StyledContainerFields>
                         <StyledTitleSelectInput>Número: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                        <StyledInput placeholder="Digite aqui" {...register("numero")}></StyledInput>
+                        <StyledInput placeholder="Digite aqui" {...register("numeroEndereco")}></StyledInput>
                     </StyledContainerFields>
                 </StyledContainerSelectInput>
 

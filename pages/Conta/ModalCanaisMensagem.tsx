@@ -19,29 +19,20 @@ import {
 import {
     StyledButtonInsert
 } from '../../styles/Conta/ButtonStyled';
-import { AppDispatch, useAppSelector } from '../../Redux/store';
-import { useDispatch } from 'react-redux';
-import { steps } from '../../Redux/Cadastro/sliceSteps';
-import { cadastro } from '../../Redux/Cadastro/slice';
+import { useAppSelector } from '../../Redux/store';
 import { profissional } from '../../data';
-import { z } from 'zod';
 
 export default function ModalCanaisMensagem({ register }: any) {
 
-    const userSchema = z.object({
-        msg: z.string()
+    const data = useAppSelector((state) => state.profissional);
+    const idProfissional = data[0].idProfissional;
+    var nomeProfissional: string = '';
+
+    profissional.forEach(element => {
+        if (element.idProfissional == parseInt(idProfissional)) {
+            nomeProfissional = element.nome
+        }
     });
-
-    const dispatch = useDispatch<AppDispatch>();
-    // const data = useAppSelector((state) => state.cadastroReducer);
-    // const idProfissional = data[0].idProfissional;
-    // var nomeProfissional: string = '';
-
-    // profissional.forEach(element => {
-    //     if (element.idProfissional == parseInt(idProfissional)) {
-    //         nomeProfissional = element.nome
-    //     }
-    // });
 
 
     return (
@@ -49,7 +40,7 @@ export default function ModalCanaisMensagem({ register }: any) {
             <StyledContainerInput>
                 <StyledTitleInput>Profissional: <StyledSpan>*</StyledSpan></StyledTitleInput>
                 <StyledSelect disabled>
-                    <option value=""></option>
+                    <option value="">{nomeProfissional}</option>
                 </StyledSelect>
             </StyledContainerInput>
             <StyledModalTitleAlert>Enviar cobrança por e-mail:</StyledModalTitleAlert>
@@ -61,7 +52,7 @@ export default function ModalCanaisMensagem({ register }: any) {
             <StyledTitleMarcacaoMsg>Marcação dinâmica:</StyledTitleMarcacaoMsg>
 
             <StyledContainerSelectButton>
-                <StyledSelectMarcacao>
+                <StyledSelectMarcacao {...register("marcacaoDinamica")}>
                     <option value="">Selecione</option>
                     <option value="1">Opção 1</option>
                     <option value="2">Opção 2</option>

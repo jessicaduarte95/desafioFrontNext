@@ -22,6 +22,7 @@ import ModalFormaPagamento from './ModalFormaPagamento';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { z } from 'zod';
 import { ToastContainer, toast } from 'react-toastify';
+import { profissional } from '../../Redux/Cadastro/sliceProfissional';
 
 interface DataForm {
     idProfissional: string;
@@ -37,7 +38,8 @@ interface DataForm {
     idEstado: string;
     cidade: string;
     endereco: string;
-    numero: string;
+    numeroEndereco: string;
+    marcacaoDinamica: string;
     msg: string;
     meioPagamento1: boolean;
     meioPagamento2: boolean;
@@ -62,7 +64,7 @@ export default function Principal() {
         idEstado: z.string(),
         cidade: z.string(),
         endereco: z.string(),
-        numero: z.string().min(1)
+        numeroEndereco: z.string().min(1)
     });
 
     const { register, handleSubmit, reset } = useForm<DataForm>()
@@ -75,14 +77,16 @@ export default function Principal() {
 
     const handleCloseModal = () => {
         dispatch(steps(""));
+        // reset();
     }
 
     const onSubmit: SubmitHandler<DataForm> = (data) => {
-        console.log("Data123", data)
 
         if (openModal.step == "cadastro") {
             try {
+                const idProfissional = {idProfissional: data.idProfissional}
                 userSchemaCadastro.parse(data);
+                dispatch(profissional(idProfissional));
                 dispatch(steps("canaisMensagem"));
             } catch (error) {
                 console.error('Erro de validação:', error);

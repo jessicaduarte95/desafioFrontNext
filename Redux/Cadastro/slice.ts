@@ -13,8 +13,8 @@ interface Data {
     CEP: number;
     idEstado: string;
     cidade: string;
-    endereco: string;
-    numero: string;
+    numeroEndereco: string;
+    marcacaoDinamica: string;
     msg: string;
     meioPagamento1: boolean;
     meioPagamento2: boolean;
@@ -31,6 +31,7 @@ export const cadastroAssinantes = createSlice({
     initialState,
     reducers: {
         cadastro: (state, action: PayloadAction<Data>) => {
+            console.log("Dados: ", action.payload)
             return [...state, action.payload]
         }
     }

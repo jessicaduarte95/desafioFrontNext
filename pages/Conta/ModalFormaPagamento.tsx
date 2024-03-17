@@ -20,28 +20,20 @@ import {
 import {
     StyledSelect
 } from '../../styles/Conta/CadastroStyled';
-import { AppDispatch, useAppSelector } from '../../Redux/store';
-import { steps } from '../../Redux/Cadastro/sliceSteps';
-import { useDispatch } from 'react-redux';
+import { useAppSelector } from '../../Redux/store';
 import { profissional, meiosPagamento } from '../../data';
 
 export default function ModalFormaPagamento({ register }: any) {
 
-    const dispatch = useDispatch<AppDispatch>();
-    const data = useAppSelector((state) => state.cadastroReducer);
-    // const idProfissional = data[0].idProfissional;
-    // var nomeProfissional: string = '';
-    // console.log("Dados: ", data)
+    const data = useAppSelector((state) => state.profissional);
+    const idProfissional = data[0].idProfissional;
+    var nomeProfissional: string = '';
 
-    // profissional.forEach(element => {
-    //     if (element.idProfissional == parseInt(idProfissional)) {
-    //         nomeProfissional = element.nome
-    //     }
-    // });
-
-    const handleCloseModal = () => {
-        dispatch(steps(""));
-    }
+    profissional.forEach(element => {
+        if (element.idProfissional == parseInt(idProfissional)) {
+            nomeProfissional = element.nome
+        }
+    });
 
     return (
         <>
@@ -49,7 +41,7 @@ export default function ModalFormaPagamento({ register }: any) {
             <StyledContainerInput>
                 <StyledTitleInput>Profissional: <StyledSpan>*</StyledSpan></StyledTitleInput>
                 <StyledSelect disabled>
-                    <option value=""></option>
+                    <option value="">{nomeProfissional}</option>
                 </StyledSelect>
             </StyledContainerInput>
             <StyledModalTitleAlert>Forma de pagamento da cobrança</StyledModalTitleAlert>
