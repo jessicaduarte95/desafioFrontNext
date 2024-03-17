@@ -16,7 +16,9 @@ import {
     StyledInputNome,
     StyledInputFields,
     StyledInputFieldCEP,
-    StyledSelectBancoConta
+    StyledSelectBanco,
+    StyledSelectConta,
+    StyledAgenciaEndereco
 } from '../../styles/Conta/CadastroStyled';
 import 'react-toastify/dist/ReactToastify.css';
 import { profissional, banco, conta, tipoPessoa, estado } from '../../data';
@@ -55,28 +57,28 @@ export default function ModalInserir({ register }: any) {
                 <StyledContainerSelectInput>
                     <StyledContainerFields>
                         <StyledTitleSelectInput>Banco: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                        <StyledSelectBancoConta {...register("idBanco")}>
+                        <StyledSelectBanco {...register("idBanco")}>
                             <option value="">Selecione</option>
                             {banco.map((banco) =>
                                 <option key={banco.idBanco} value={banco.idBanco}>{banco.nome}</option>
                             )}
-                        </StyledSelectBancoConta>
+                        </StyledSelectBanco>
                     </StyledContainerFields>
                     <StyledContainerFields>
                         <StyledTitleSelectInput>Tipo de Conta: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                        <StyledSelectBancoConta {...register("idTipoConta")}>
+                        <StyledSelectConta {...register("idTipoConta")}>
                             <option value="">Selecione</option>
                             {conta.map((conta) =>
                                 <option key={conta.idTipoConta} value={conta.idTipoConta}>{conta.nome}</option>
                             )}
-                        </StyledSelectBancoConta>
+                        </StyledSelectConta>
                     </StyledContainerFields>
                 </StyledContainerSelectInput>
 
                 <StyledContainerSelectInput>
                     <StyledContainerFields>
                         <StyledTitleSelectInput>Agência: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                        <StyledInput placeholder="Digite aqui" {...register("agencia")}></StyledInput>
+                        <StyledAgenciaEndereco placeholder="Digite aqui" {...register("agencia")}></StyledAgenciaEndereco>
                     </StyledContainerFields>
                     <StyledContainerFields>
                         <StyledTitleSelectInput>Conta com dígito: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
@@ -130,7 +132,7 @@ export default function ModalInserir({ register }: any) {
                 <StyledContainerSelectInput>
                     <StyledContainerFields>
                         <StyledTitleSelectInput>Endereço: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                        <StyledInput placeholder="Digite aqui" {...register("endereco")} type='text'></StyledInput>
+                        <StyledAgenciaEndereco placeholder="Digite aqui" {...register("endereco")} type='text'></StyledAgenciaEndereco>
                     </StyledContainerFields>
                     <StyledContainerFields>
                         <StyledTitleSelectInput>Número: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
