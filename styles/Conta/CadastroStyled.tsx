@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import InputMask from 'react-input-mask';
 
 export const StyledContainerAlert = styled.div`
     padding: 16px;
@@ -155,7 +156,35 @@ export const StyledInputFields = styled.input`
         width: 88%;
     }
 `
-export const StyledInputFieldCEP = styled.input`
+
+export const StyledInputFieldsCPFTelefone = styled(InputMask)`
+    font-size: 16px;
+    padding: 4px 16px 4px 16px;
+    border: 1px solid #CCD1D3;
+    border-radius: 2px;
+    margin-left: 15px;
+    width: 82%;
+    outline: none;
+    &:focus {
+        border-color: #2797BA;
+    }
+
+    @media (max-width: 900px) {
+        width: 77%;
+    }
+
+    @media (max-width: 800px) {
+        margin-left: 0;
+        width: 92%;
+    }
+
+    @media (max-width: 500px) {
+        margin-left: 0;
+        width: 88%;
+    }
+`
+
+export const StyledInputFieldCEP = styled(InputMask)`
     font-size: 16px;
     padding: 4px 16px 4px 16px;
     border: 1px solid #CCD1D3;

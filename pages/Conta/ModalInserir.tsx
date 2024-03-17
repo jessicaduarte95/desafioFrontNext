@@ -18,7 +18,8 @@ import {
     StyledInputFieldCEP,
     StyledSelectBanco,
     StyledSelectConta,
-    StyledAgenciaEndereco
+    StyledAgenciaEndereco,
+    StyledInputFieldsCPFTelefone
 } from '../../styles/Conta/CadastroStyled';
 import 'react-toastify/dist/ReactToastify.css';
 import { profissional, banco, conta, tipoPessoa, estado } from '../../data';
@@ -98,11 +99,11 @@ export default function ModalInserir({ register }: any) {
                     </StyledContainerFields>
                     <StyledContainerFields>
                         <StyledTitleSelectInput>CPF: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                        <StyledInputFields placeholder="Digite aqui" {...register("CPF")} type='text'></StyledInputFields>
+                        <StyledInputFieldsCPFTelefone placeholder="Digite aqui" {...register("CPF")} type='text' mask="999.999.999-99"></StyledInputFieldsCPFTelefone>
                     </StyledContainerFields>
                     <StyledContainerFields>
                         <StyledTitleSelectInput>Telefone: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                        <StyledInputFields placeholder="Digite aqui" {...register("telefone")} type='text'></StyledInputFields>
+                        <StyledInputFieldsCPFTelefone placeholder="Digite aqui" {...register("telefone")} type='text' mask="(99) 9999-9999"></StyledInputFieldsCPFTelefone>
                     </StyledContainerFields>
                 </StyledContainerSelectInput>
 
@@ -112,7 +113,7 @@ export default function ModalInserir({ register }: any) {
                 <StyledContainerSelectInput>
                     <StyledContainerFields>
                         <StyledTitleSelectInput>CEP: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
-                        <StyledInputFieldCEP placeholder="Digite aqui" {...register("CEP")} type='text'></StyledInputFieldCEP>
+                        <StyledInputFieldCEP placeholder="Digite aqui" {...register("CEP")} type='text' mask="99999-999"></StyledInputFieldCEP>
                     </StyledContainerFields>
                     <StyledContainerFields>
                         <StyledTitleSelectInput>Estado: <StyledSpan>*</StyledSpan></StyledTitleSelectInput>
