@@ -21,6 +21,9 @@ export const StyledContainerModal = styled.div`
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
+    @media (max-width: 900px) {
+        width: 700px;
+    }
     @media (max-width: 800px) {
         width: 500px;
     }

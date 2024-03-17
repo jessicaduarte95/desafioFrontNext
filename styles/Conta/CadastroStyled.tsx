@@ -49,6 +49,10 @@ export const StyledSelect = styled.select`
     border: 1px solid #CCD1D3;
     border-radius: 2px;
     width: 100%;
+    outline: none;
+    &:focus {
+        border-color: #2797BA;
+    }
 `
 
 export const StyledSelectBancoConta = styled.select`
@@ -57,6 +61,10 @@ export const StyledSelectBancoConta = styled.select`
     border: 1px solid #CCD1D3;
     border-radius: 2px;
     width: 98%;
+    outline: none;
+    &:focus {
+        border-color: #2797BA;
+    }
 `
 
 export const StyledInput = styled.input`
@@ -66,6 +74,10 @@ export const StyledInput = styled.input`
     border-radius: 2px;
     margin-left: 5px;
     width: 90%;
+    outline: none;
+    &:focus {
+        border-color: #2797BA;
+    }
     @media (max-width: 800px) {
         margin-left: 0;
         width: 92%;
@@ -79,6 +91,10 @@ export const StyledInputFields = styled.input`
     border-radius: 2px;
     margin-left: 15px;
     width: 85%;
+    outline: none;
+    &:focus {
+        border-color: #2797BA;
+    }
     @media (max-width: 800px) {
         margin-left: 0;
         width: 92%;
@@ -91,6 +107,10 @@ export const StyledInputFieldCEP = styled.input`
     border-radius: 2px;
     margin-right: 15px;
     width: 85%;
+    outline: none;
+    &:focus {
+        border-color: #2797BA;
+    }
     @media (max-width: 800px) {
         margin-right: 0;
         width: 92%;
@@ -104,6 +124,10 @@ export const StyledInputNome = styled.input`
     border-radius: 2px;
     margin-right: 32px;
     width: 97%;
+    outline: none;
+    &:focus {
+        border-color: #2797BA;
+    }
     @media (max-width: 800px) {
         margin-right: 0;
         width: 92%;

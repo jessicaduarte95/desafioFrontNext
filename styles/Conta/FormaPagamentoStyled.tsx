@@ -29,52 +29,53 @@ export const StyledAlertText = styled.p`
     font-weight: 400;
     font-size: 14px;
     padding: 10px;
-`
-
-export const StyledTitleMarcacaoMsg = styled.p`
-    margin: 0px 32px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    font-family: Roboto;
-    color: #3D3D3D;
-`
-
-export const StyledContainerSelectButton = styled.div`
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 0px;
-    margin: 0px 32px;
-    @media (max-width: 800px) {
-        display: flex;
-        flex-direction: column;
-    }
-`
-export const StyledSelectMarcacao = styled.select`
-    font-size: 16px;
-    padding: 4px 16px 4px 16px;
-    border: 1px solid #CCD1D3;
-    border-radius: 2px;
-    width: 657px;
-    outline: none;
-    &:focus {
-        border-color: #2797BA;
-    }
-    @media (max-width: 800px) {
-        width: 100%;
-    }
-
-`
-
-export const StyledInputMsg = styled.input `
-    margin: 10px 32px 0px 32px;
-    font-size: 16px;
-    padding: 4px 16px 4px 16px;
-    border: 1px solid #CCD1D3;
-    border-radius: 2px;
-    width: 89%;
-    height: 176px;
     line-height: 20px;
+`
+
+export const StyledTitlePagamentoMulta = styled.p`
+    margin: 0px 32px 18px 32px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #4C5153
+`
+
+export const StyledContainerCheckBox = styled.div`
+    margin: 0px 32px;
+    display: flex;
+    height: 40px;
+`
+
+export const StyledCheckBox = styled.input`
+    background-color: #7D8C94;
+    width: 18px;
+    height: 18px;
+`
+
+export const StyledTextCheckBox = styled.p`
+    margin-left: 10px;
+    color: #3D3D3D;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-top: 2px;
+`
+
+export const StyledContainerValorMulta = styled.div`
+    margin: 0px 32px 17px 32px;
+`
+
+export const StyledValorMultaText = styled.p`
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: Roboto;
+`
+
+export const StyledValorMultaInput = styled.input`
+    padding: 4px 16px 4px 16px;
+    border: 1px solid #CCD1D3;
+    border-radius: 2px;
     outline: none;
     &:focus {
         border-color: #2797BA;
