@@ -13,6 +13,7 @@ interface Data {
     CEP: number;
     idEstado: string;
     cidade: string;
+    endereco: string;
     numeroEndereco: string;
     marcacaoDinamica: string;
     msg: string;

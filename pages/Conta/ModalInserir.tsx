@@ -18,28 +18,10 @@ import {
     StyledInputFieldCEP,
     StyledSelectBancoConta
 } from '../../styles/Conta/CadastroStyled';
-import { z } from 'zod';
 import 'react-toastify/dist/ReactToastify.css';
 import { profissional, banco, conta, tipoPessoa, estado } from '../../data';
 
 export default function ModalInserir({ register }: any) {
-
-    const userSchema = z.object({
-        idProfissional: z.string().min(1),
-        idBanco: z.string(),
-        idTipoConta: z.string(),
-        agencia: z.string(),
-        conta: z.string(),
-        idTipoPessoa: z.string(),
-        CPF: z.string().min(11),
-        telefone: z.string().min(10),
-        nome: z.string(),
-        CEP: z.string().min(8),
-        idEstado: z.string(),
-        cidade: z.string(),
-        endereco: z.string(),
-        numero: z.string().min(1)
-    });
 
     return (
         <>

@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     StyledButton,
     StyledContainerPrincipal
@@ -12,6 +13,7 @@ import {
     StyleCancelButton,
     StyleNextButton
 } from '../../styles/Conta/ButtonStyled';
+import ListaDados from './ListaDados';
 import ModalInserir from '../../pages/Conta/ModalInserir';
 import { useAppSelector, AppDispatch } from '../../Redux/store';
 import { useDispatch } from 'react-redux';
@@ -77,7 +79,7 @@ export default function Principal() {
 
     const handleCloseModal = () => {
         dispatch(steps(""));
-        // reset();
+        reset();
     }
 
     const onSubmit: SubmitHandler<DataForm> = (data) => {
@@ -160,6 +162,8 @@ export default function Principal() {
                     </StyledModalOverlay>
 
                     : ''}
+
+                    <ListaDados></ListaDados>
         </StyledContainerPrincipal>
     )
 }
