@@ -69,6 +69,20 @@ export default function Principal() {
         numeroEndereco: z.string().min(1)
     });
 
+    const userSchemaCanaisMensagem = z.object({
+        marcacaoDinamica: z.string(),
+        msg: z.string(),
+    });
+
+    const userSchemaPagamento = z.object({
+        meioPagamento1: z.boolean(),
+        meioPagamento2: z.boolean(),
+        meioPagamento3: z.boolean(),
+        cobrarMulta: z.boolean(),
+        valorMulta: z.string(),
+        jurosMulta: z.boolean()
+    });
+
     const { register, handleSubmit, reset } = useForm<DataForm>()
     const openModal = useAppSelector((state) => state.stepsCadastro);
     const dispatch = useDispatch<AppDispatch>();
@@ -86,7 +100,7 @@ export default function Principal() {
 
         if (openModal.step == "cadastro") {
             try {
-                const idProfissional = {idProfissional: data.idProfissional}
+                const idProfissional = { idProfissional: data.idProfissional }
                 userSchemaCadastro.parse(data);
                 dispatch(profissional(idProfissional));
                 dispatch(steps("canaisMensagem"));
@@ -96,6 +110,7 @@ export default function Principal() {
             }
         } else if (openModal.step == "canaisMensagem") {
             try {
+                userSchemaCanaisMensagem.parse(data);
                 dispatch(steps("formaPagamento"));
             } catch (error) {
                 console.error('Erro de validação:', error);
@@ -103,6 +118,7 @@ export default function Principal() {
             }
         } else if (openModal.step == "formaPagamento") {
             try {
+                userSchemaPagamento.parse(data);
                 dispatch(cadastro(data));
                 dispatch(steps(""));
                 reset();
@@ -111,7 +127,7 @@ export default function Principal() {
                 toast.error("Atenção! Todos os campos devem ser preenchidos e com dados válidos.", { theme: "colored" });
             }
         }
-        
+
     }
 
     return (
@@ -163,7 +179,7 @@ export default function Principal() {
 
                     : ''}
 
-                    <ListaDados></ListaDados>
+            <ListaDados></ListaDados>
         </StyledContainerPrincipal>
     )
 }
