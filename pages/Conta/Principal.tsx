@@ -153,7 +153,7 @@ export default function Principal() {
                                                 <ModalFormaPagamento register={register} />
                                                 <StyleContainerButton>
                                                     <StyleCancelButton onClick={handleCloseModal}>Cancelar</StyleCancelButton>
-                                                    <StyleNextButton type='submit'>Próximo</StyleNextButton>
+                                                    <StyleNextButton type='submit'>Concluir</StyleNextButton>
                                                 </StyleContainerButton>
                                             </StyledContainerModal>
                                             : ''
