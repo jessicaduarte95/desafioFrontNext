@@ -29,12 +29,12 @@ export default function ListaDados() {
                             <StyledText>Número: {data.numeroEndereco}</StyledText>
                             <StyledText>Marcação dinâmica: {data.marcacaoDinamica}</StyledText>
                             <StyledText>Conteúdo da mensagem: {data.msg}</StyledText>
-                            <StyledText>Meio de Pagamento (PIX): {data.meioPagamento1}</StyledText>
-                            <StyledText>Meio de Pagamento (Cartão de crédito): {data.meioPagamento2}</StyledText>
-                            <StyledText>Meio de Pagamento (Boleto): {data.meioPagamento3}</StyledText>
-                            <StyledText>Cobrar multa: {data.cobrarMulta}</StyledText>
+                            <StyledText>Meio de Pagamento (PIX): {data.meioPagamento1 ? "true" : "false"}</StyledText>
+                            <StyledText>Meio de Pagamento (Cartão de crédito): {data.meioPagamento2 ? "true" : "false"}</StyledText>
+                            <StyledText>Meio de Pagamento (Boleto): {data.meioPagamento3 ? "true" : "false"}</StyledText>
+                            <StyledText>Cobrar multa: {data.cobrarMulta ? "true" : "false"}</StyledText>
                             <StyledText>Valor da Multa: {data.valorMulta}</StyledText>
-                            <StyledText>Juros por atraso: {data.jurosMulta}</StyledText>
+                            <StyledText>Juros por atraso: {data.jurosMulta ? "true" : "false"}</StyledText>
                         </StyledListaDados>
                     )}
                 </>
